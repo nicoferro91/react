@@ -1,5 +1,15 @@
+/* * {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+} */
+
 .App {
   text-align: center;
+}
+
+.body {
+  background-color: rgb(255, 245, 225);
 }
 
 .App-logo {
@@ -7,21 +17,26 @@
   pointer-events: none;
 }
 
+.navbar-custom {
+  background-color: rgb(255, 230, 200);
+}
+
+/*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+*/
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
