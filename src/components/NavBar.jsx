@@ -1,5 +1,7 @@
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import favicon from "../assets/images/moin-favicon.jpg"
+import CartWidget from './CartWidget'
 
 export default function Navbar() {
     return (
@@ -33,6 +35,7 @@ export default function Navbar() {
                 </li>
             </ul>
         </div>
+        <CartWidget/>
     </nav>
     </>
     )
