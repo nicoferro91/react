@@ -4,34 +4,6 @@
   box-sizing: border-box;
 }
 
-.cuerpo {
-  text-align: center;
-}
-
 .body {
   background-color: rgb(255, 245, 225);
-}
-
-.cuerpo-logo {
-  height: 20%;
-  pointer-events: none;
-}
-
-.navbar-custom {
-  background-color: rgb(255, 230, 200);
-}
-
-.carrito {
-  margin: 0 2rem 0 2rem;
-}
-
-.cuerpo-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: top;
-}
-
-.App-link {
-  color: #61dafb;
 }

@@ -1,4 +1,4 @@
-import ItemList from "./ItemList";
+import ItemList from "../ItemList/ItemList";
 
 export default function ItemListContainer() {
     return(
@@ -9,5 +9,3 @@ export default function ItemListContainer() {
     </>
     )
 }
-
-// Crea un componente contenedor ItemListContainer.js con una prop greeting, y muestra el mensaje dentro del contenedor con el styling integrado.

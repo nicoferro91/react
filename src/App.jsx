@@ -1,13 +1,13 @@
 // import { useState } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Cuerpo from "./components/Cuerpo.jsx"
-import Navbar from './components/NavBar.jsx';
+import Cuerpo from "./components/Cuerpo/Cuerpo.jsx"
+import BarraNav from './components/BarraNav/BarraNav.jsx';
 
 function App() {
   return (
     <>
-      <Navbar/>
+      <BarraNav/>
       <Cuerpo/>
     </>
   );
