@@ -10,7 +10,7 @@ export default function Cuerpo() {
         <div className="cuerpo">
             <Header/>
             <ItemListContainer/>
-            <ItemCount stock="5" initial="1" />
+            <ItemCount stock={5} initial={1} />
         </div>
         </>
     )
