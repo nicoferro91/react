@@ -1,5 +1,6 @@
 
 import applogo from "../../assets/images/moin-logo.jpg"
+import './Header.css'
 
 export default function Header() {
     return(

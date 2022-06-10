@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button'
 import { useState } from 'react'
+import "./ItemCount.css"
 
 export default function ItemCount({stock, initial, onAdd}) {
     const [cantidad, setCount ] = useState(initial)
@@ -14,7 +15,7 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
     return(
         <>
-            <h2>Cantidad : {cantidad}</h2>
+            <h4>Cantidad : {cantidad}</h4>
             <Button variant="outline-primary" className='mx-2' onClick={restar}>-</Button>
             <Button variant="outline-primary" className='mx-2' onClick={sumar}>+</Button>
             <br />
