@@ -1,0 +1,11 @@
+
+.tarjeta {
+    border-radius: 1rem;
+}
+
+.fotoDetail {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 32rem;
+    height: 32rem;
+}

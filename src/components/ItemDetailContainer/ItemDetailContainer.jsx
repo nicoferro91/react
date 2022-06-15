@@ -1,9 +1,11 @@
+import React from 'react'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from "react"
 import { getItem } from "../../helpers/getItem"
-import Item from "../Item/Item"
-import "./ItemList.css"
+import "./ItemDetailContainer.css"
 
-const ItemList = (props) => {
+
+const ItemDetailContainer = (props) => {
     const [productos, setProductos] = useState([])
     let [loading, setLoading] = useState(true)
 
@@ -20,15 +22,16 @@ const ItemList = (props) => {
 
     return (
         <>
+                
         { loading ? 
-            <h2>Cargando...</h2>
+            <p></p>
         :
-        <div className="itemList">          
-            {productos.map(producto => <Item key={producto.id} props={producto} /> )}
+        <div className='ItemDetailContainer'>
+            <ItemDetail props={productos[0]}/>
         </div>
         }
         </>
     )    
 }
 
-export default ItemList
+export default ItemDetailContainer

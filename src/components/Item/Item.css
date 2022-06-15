@@ -1,5 +1,11 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+
+.tarjeta {
+    border-radius: 2rem;
+}
+
+.fotoCard {
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 18rem;
+    height: 18rem;
 }
