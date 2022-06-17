@@ -2,12 +2,15 @@ import React from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useEffect, useState } from "react"
 import { getItem } from "../../helpers/getItem"
+import { useParams } from "react-router-dom"
 import "./ItemDetailContainer.css"
 
 
 const ItemDetailContainer = (props) => {
     const [productos, setProductos] = useState([])
     let [loading, setLoading] = useState(true)
+    
+    const {id} = useParams()
 
     useEffect(()=>{
         getItem()
@@ -22,12 +25,11 @@ const ItemDetailContainer = (props) => {
 
     return (
         <>
-                
         { loading ? 
-            <p></p>
+            <h3>Cargando...</h3>
         :
-        <div className='ItemDetailContainer'>
-            <ItemDetail props={productos[0]}/>
+        <div className='ItemDetailContainer'>          
+            <ItemDetail props={productos.find(productos => productos.id===id)}/>
         </div>
         }
         </>

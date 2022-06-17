@@ -2,8 +2,10 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .body {
   background-color: rgb(255, 245, 225);
 }
+

@@ -1,6 +1,7 @@
 import React from 'react'
 import "./ItemDetail.css"
 import Card from 'react-bootstrap/Card'
+import ItemCount from '../ItemCount/ItemCount'
 
 export default function ItemDetail({props}) {
   return (
@@ -15,6 +16,7 @@ export default function ItemDetail({props}) {
                 <Card.Text>
                     Precio: ${props.precio}
                 </Card.Text>
+                <ItemCount precio={props.precio} stock={5} initial={1} />
             </Card.Body>
         </Card>
          

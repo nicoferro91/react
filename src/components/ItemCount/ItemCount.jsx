@@ -4,6 +4,7 @@ import "./ItemCount.css"
 
 export default function ItemCount({stock, initial, onAdd}) {
     const [cantidad, setCount ] = useState(initial)
+    const [compra, setCompra] = useState([])
     function sumar(){
         if(cantidad<stock) setCount(cantidad + 1)        
     }
@@ -12,6 +13,7 @@ export default function ItemCount({stock, initial, onAdd}) {
     }
     function comprar(){
         console.log("se compraron "+cantidad)
+        setCompra(cantidad)
     }
     return(
         <>

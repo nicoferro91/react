@@ -5,6 +5,7 @@ import CartWidget from '../CartWidget/CartWidget'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
+import {NavLink} from "react-router-dom"
 import './BarraNav.css'
 
 export default function BarraNav() {
@@ -12,23 +13,24 @@ export default function BarraNav() {
         <>
             <Navbar className="navbar-custom" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">MOIN DI
-                        <img
-                            src = {favicon}
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top ms-3"
-                            alt="React Bootstrap logo"
-                        />
+                    <NavLink to="/">
+                        <Navbar.Brand className='link'>
+                            <img
+                                src = {favicon}
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top ms-3"
+                                alt="logo moin di"
+                            />
                         </Navbar.Brand>
+                    </NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#home">Inicio</Nav.Link>
-                            <Nav.Link href="#carteras">Carteras</Nav.Link>
-                            <Nav.Link href="#accesorios">Accesorios</Nav.Link>
-                            <Nav.Link href="#materiales">Materiales</Nav.Link>
-                            <Nav.Link href="#contacto">Contacto</Nav.Link>
+                            <NavLink to="/" className={({isActive})=> isActive? "linkActivo" :"link"}>Inicio</NavLink>
+                            <NavLink to="/categoria/carteras" className={({isActive})=> isActive? "linkActivo" :"link"}>Carteras</NavLink>
+                            <NavLink to="/categoria/billeteras" className={({isActive})=> isActive? "linkActivo" :"link"}>Billeteras</NavLink>
+                            <NavLink to="/categoria/accesorios" className={({isActive})=> isActive? "linkActivo" :"link"}>Accesorios</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
