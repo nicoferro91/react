@@ -16,7 +16,7 @@ export default function ItemDetail({props}) {
                 <Card.Text>
                     Precio: ${props.precio}
                 </Card.Text>
-                <ItemCount precio={props.precio} stock={5} initial={1} />
+                <ItemCount props={props} stock={5} initial={1} />
             </Card.Body>
         </Card>
          
