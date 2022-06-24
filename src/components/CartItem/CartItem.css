@@ -1,0 +1,19 @@
+.cartItem {
+    font-size: 1.2rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.cartImagen {
+    margin: 0.2rem;
+    height: 10rem;
+    width: 10rem;
+}
+
+.cartFila {
+    transition: background-color 0.15s;
+}
+
+.cartFila:hover {
+    background-color: rgba(255, 215, 167, 0.837);
+}

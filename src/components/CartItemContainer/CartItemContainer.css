@@ -1,0 +1,33 @@
+.cartItemContainer {
+    font-size: 1.2rem;
+    background-color: rgba(255, 230, 200, 0.837);
+    text-align: center;
+    vertical-align: middle;
+    border: 1rem solid rgba(255, 215, 167, 0.837);
+    border-radius: 2rem;
+    table-layout: fixed;
+    padding: 1rem;
+}
+
+.cartColumna {
+    width: 500px;
+}
+
+.cartTotal {
+    background-color: rgba(255, 215, 167, 0.837);
+    display: inline;
+    padding: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    animation: miColor 2s infinite;
+}
+
+.cartBoton {
+    margin: 0 1rem 0 1rem;
+}
+
+@keyframes miColor {
+    0% {background-color: rgba(255, 215, 167, 0.837);}
+    50% {background-color: rgba(255, 230, 200, 0.837);}
+    100% {background-color: rgba(255, 215, 167, 0.837);}
+}

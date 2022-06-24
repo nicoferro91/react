@@ -1,11 +1,12 @@
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useCartContext } from '../CartContext/CartContext'
 import "./ItemCount.css"
 
 export default function ItemCount({stock, initial,props}) {
     const [cantidad, setCount ] = useState(initial)
-    let [compra, setCompra] = useState(props)
+    const {addToCart} = useCartContext()
     
     function sumar(){
         if(cantidad<stock) setCount(cantidad + 1)        
@@ -14,12 +15,8 @@ export default function ItemCount({stock, initial,props}) {
         if(cantidad>0) setCount(cantidad - 1)
     }
     function comprar(){
-        setCompra(props)
-        setCompra(props.cantidad = cantidad)
         setInputType("compra")
-        compra = {id: props.id, cantidad: cantidad}
-        console.log(compra)
-        localStorage.setItem("compra", JSON.stringify(compra))
+        addToCart({cantidad: cantidad, producto: props})
     }
 
     const Checkout = () => {
