@@ -1,6 +1,6 @@
-import './App.css';
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import BarraNav from './components/BarraNav/BarraNav.jsx';
+import BarraNav from './components/BarraNav/BarraNav.jsx'
 import Header from "./components/Header/Header"
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"

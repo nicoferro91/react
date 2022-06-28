@@ -28,8 +28,14 @@ export const CartContextProvider = ({ children }) => {
   const quitarProducto = (id) =>  setCartList(cartList.filter((nuevoProducto) => nuevoProducto.producto.id !== id));
   const iconCart = () => cartList.reduce((total, precio) => total + precio.cantidad, 0);
 
+  const countCartCant = () => {
+    let cantTotal = 0;
+    cartList.forEach((producto)=>{cantTotal += parseInt(producto.cantidad)});
+    return cantTotal;
+  }
+
   return (
-    <CartContext.Provider value={{cartList, setCartList, addToCart, clearList, importeTotal, quitarProducto, iconCart}}>
+    <CartContext.Provider value={{cartList, setCartList, addToCart, clearList, importeTotal, quitarProducto, iconCart, countCartCant}}>
       {children}
     </CartContext.Provider>
   );

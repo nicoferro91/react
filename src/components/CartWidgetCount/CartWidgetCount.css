@@ -1,0 +1,17 @@
+.cartWidgetCount {
+    background-color: rgb(255, 153, 138);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.6rem;
+    color: white;
+    font-weight: 400;
+}
+
+.emptyCart {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
