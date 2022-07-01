@@ -4,8 +4,8 @@ import Card from 'react-bootstrap/Card'
 import ItemCount from '../ItemCount/ItemCount'
 
 export default function ItemDetail({props}) {
-  return (
-    <>        
+  return (        
+    <>  
         <Card className="text-center tarjeta" style={{width:'32rem'}}>
             <Card.Img className="fotoDetail" variant="top" src={props.imagen} alt="foto del producto"/>
             <Card.Body>

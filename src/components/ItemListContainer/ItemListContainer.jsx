@@ -1,40 +1,34 @@
 import { useEffect, useState } from "react"
-import { getItem } from "../../helpers/getItem"
 import {useParams} from "react-router-dom"
 import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.css"
+import { collection, getFirestore, getDocs, query, where } from "firebase/firestore"
 
 const ItemListContainer = (props) => {
-    const [productos, setProductos] = useState([])
     let [loading, setLoading] = useState(true)
     let {greeting} = props
-
     const {categoriaId} = useParams()
+    
+    const [products, setProducts] = useState([])
 
-    useEffect(()=>{
-        if (categoriaId) {
-            getItem()
-            .then((resp)=>{
-                setProductos(resp.filter(productos=>productos.categoria === categoriaId ))
-            })
-            .catch((err)=>{
-                console.log(err)
-            })
-            .finally(()=> setLoading(false))
-        } 
+    useEffect(() => {
+        const database = getFirestore()
+        const queryCollection = collection(database, "productos")
+        if(categoriaId) {
+            const queryCollectionFilter = query(queryCollection, where("categoria", "==", categoriaId))
+            getDocs(queryCollectionFilter)
+            .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data() }) )))
+            .catch(error => console.log(error))
+            .finally(()=>setLoading(false))
+        }
         else {
-            getItem()
-            .then((resp)=>{
-                setProductos(resp)
-            })
-            .catch((err)=>{
-                console.log(err)
-            })
-            .finally(()=> setLoading(false))
+            getDocs(queryCollection)
+            .then(resp => setProducts(resp.docs.map(prod => ({id: prod.id, ...prod.data() }) )))
+            .catch(error => console.log(error))
+            .finally(()=>setLoading(false))
         }
 
-
-    },[categoriaId])
+    }, [categoriaId])
     
     return (
         <>
@@ -43,7 +37,7 @@ const ItemListContainer = (props) => {
         :
         <div className="itemListContainer">
             <h2>{greeting}</h2>          
-            <ItemList productos={productos}/>
+            <ItemList productos={products}/>
         </div>
         }
         </>
@@ -51,18 +45,3 @@ const ItemListContainer = (props) => {
 }
 
 export default ItemListContainer
-
-
-
-
-// export default function ItemListContainer(props) {
-//     const {greeting} = props
-//     return(
-//     <>
-//         <h3>{greeting}</h3>
-//         <Container className="itemListContainer center-text">
-//             <ItemList/>
-//         </Container>
-//     </>
-//     )
-// }
