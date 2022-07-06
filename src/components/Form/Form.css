@@ -1,0 +1,21 @@
+.contact {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+.contactForm {
+    grid-area: contacto;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.contactTitle {
+    font-size: 2rem;
+}
+.contactLabel {
+    margin-top: 0.5rem;
+}
+.contactInput {
+    font-size: 1.2rem;
+}

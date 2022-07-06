@@ -1,11 +1,10 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
 import { useCartContext } from '../CartContext/CartContext'
 import CartItem from "../CartItem/CartItem"
 import "./CartItemContainer.css"
 
 const CartItemContainer = () => {
-    const { cartList, importeTotal, clearList } = useCartContext()
+    const { cartList } = useCartContext()
 
     return (
         <div className="cartItemContainer">
@@ -20,15 +19,10 @@ const CartItemContainer = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    { cartList.map((item) => ( <CartItem item={item} key={item.producto.id} /> )) }
+                    { cartList.map((item) => ( <CartItem item={item} key={item.producto.id} /> ))}
                 </tbody>
             </table>
-                <h3 className="cartTotal">Importe total: ${importeTotal()}</h3>
-                <Button className="cartBoton" variant="danger" onClick={clearList }> Borrar Todo </Button>
-                <Button className="cartBoton" variant="success" onClick={ console.log("Gracias por elegirnos") }> Confirmar compra </Button>
         </div>
-
-
     )
 }
 
