@@ -15,11 +15,11 @@ function App() {
         <BarraNav/>
         <Header/>
         <Routes>
-          <Route index path="/" element={<ItemListContainer greeting="Bienvenida a nuestra tienda!"/>} />
-          <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
-          <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
-          <Route path="/cart" element={<Cart/>} />
-          <Route path="*" element={<Navigate to="/"/>} />
+          <Route index path="/react" element={<ItemListContainer greeting="Bienvenida a nuestra tienda!"/>} />
+          <Route path="/gh-pages-url/categoria/:categoriaId" element={<ItemListContainer/>} />
+          <Route path="/gh-pages-url/detalle/:id" element={<ItemDetailContainer/>}/>
+          <Route path="/gh-pages-url/cart" element={<Cart/>} />
+          <Route path="*" element={<Navigate to="/react"/>} />
         </Routes>
       </BrowserRouter>
     </CartContextProvider>
