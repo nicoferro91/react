@@ -11,7 +11,7 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 function App() {
   return (
     <CartContextProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/react">
         <BarraNav/>
         <Header/>
         <Routes>
