@@ -11,15 +11,14 @@ import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom"
 function App() {
   return (
     <CartContextProvider>
-      <BrowserRouter basename="/">
-      {/* <BrowserRouter basename="/react"> */}
+      <BrowserRouter basename="/react">
         <BarraNav/>
         <Header/>
         <Routes>
           <Route index path="/" element={<ItemListContainer greeting="Bienvenida a nuestra tienda!"/>} />
           <Route path="/categoria/:categoriaId" element={<ItemListContainer/>} />
           <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
-          <Route path="/cart" element={<Cart/>} />
+          <Route path="/react/cart" element={<Cart/>} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes>
       </BrowserRouter>
