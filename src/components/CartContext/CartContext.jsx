@@ -19,23 +19,23 @@ export const CartContextProvider = ({ children }) => {
 
   const clearList = () => setCartList([]);
 
-  const importeTotal = () => {
+  const totalPrice = () => {
     let total = 0;
     cartList.forEach((nuevoProducto)=>{total += parseInt(nuevoProducto.producto.precio) * parseInt(nuevoProducto.cantidad)});
     return parseInt(total);
   };
 
-  const quitarProducto = (id) =>  setCartList(cartList.filter((nuevoProducto) => nuevoProducto.producto.id !== id));
+  const removeProduct = (id) =>  setCartList(cartList.filter((nuevoProducto) => nuevoProducto.producto.id !== id));
   const iconCart = () => cartList.reduce((total, precio) => total + precio.cantidad, 0);
 
-  const countCartCant = () => {
+  const countCartItems = () => {
     let cantTotal = 0;
     cartList.forEach((producto)=>{cantTotal += parseInt(producto.cantidad)});
     return cantTotal;
   }
 
   return (
-    <CartContext.Provider value={{cartList, setCartList, addToCart, clearList, importeTotal, quitarProducto, iconCart, countCartCant}}>
+    <CartContext.Provider value={{cartList, setCartList, addToCart, clearList, totalPrice, removeProduct, iconCart, countCartItems}}>
       {children}
     </CartContext.Provider>
   );

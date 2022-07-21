@@ -3,7 +3,7 @@ import { useCartContext } from '../CartContext/CartContext'
 import "./CartItem.css"
 
 const CartItem = ({item}) => {
-    const { quitarProducto } = useCartContext()
+    const { removeProduct } = useCartContext()
     return (
         <tr className="cartFila">
             <td>
@@ -19,7 +19,7 @@ const CartItem = ({item}) => {
                 <p>${item.producto.precio}</p>
             </td>
             <td>
-                <Button variant="danger" onClick={()=>{quitarProducto(item.producto.id)}}>X</Button>
+                <Button variant="danger" onClick={()=>{removeProduct(item.producto.id)}}>X</Button>
             </td>
         </tr>
     )
