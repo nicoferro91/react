@@ -1,3 +1,6 @@
+# MOIN DI
+## _Carteras y accesorios elaborados artesanalmente en cuero_
+
 El proyecto es un eshop para el emprendimiento de marroquineria de mi madre.
 Hay cosas que no aplican puntualmente a este tipo de negocio, como el tener stock o comprar en cantidad, ya que 
 cada venta es a pedido y personalizado.
